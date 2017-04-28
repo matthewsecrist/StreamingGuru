@@ -1,0 +1,9 @@
+@import '../node_modules/bulma/sass/utilities/initial-variables';
+@import url('https://fonts.googleapis.com/css?family=Quicksand:300');
+
+$family-serif: 'Avenir', Helvetica, Arial, sans-serif;;
+$family-primary: $family-serif;
+
+$primary: #24292e;
+
+@import '../node_modules/bulma/bulma'
