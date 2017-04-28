@@ -1,3 +1,4 @@
-<template src="./template.html"></template>
-<script src="./script.js"></script>
-<style scoped src="./style.css"></style>
+<template src="./Home.component.html"></template>
+<script src="./Home.component.js"></script>
+<style src="./Home.component.scss" scoped lang="scss"></style>
+

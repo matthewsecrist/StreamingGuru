@@ -1,22 +1,24 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import Movies from '../components/Movies';
+import Shows from '../components/Shows';
 import Home from '../components/Home';
-import About from '../components/About';
 
 Vue.use(Router);
 
 export default new Router({
   mode: 'history',
+  linkActiveClass: 'is-active',
   routes: [
     {
-      path: '/home',
-      name: 'Home',
-      component: Home,
+      path: '/movies',
+      name: 'Movies',
+      component: Movies,
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About,
+      path: '/shows',
+      name: 'Shows',
+      component: Shows,
     },
     {
       path: '/',
