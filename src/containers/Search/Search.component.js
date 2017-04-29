@@ -25,7 +25,4 @@ export default {
       }
     },
   },
-  computed: {
-
-  },
 };

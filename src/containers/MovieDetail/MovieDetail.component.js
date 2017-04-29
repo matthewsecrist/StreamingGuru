@@ -28,7 +28,4 @@ export default {
         }));
     },
   },
-  updated() {
-
-  },
 };
