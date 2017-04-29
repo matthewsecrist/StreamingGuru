@@ -4,6 +4,7 @@ import Movies from '../containers/Movies';
 import MovieDetail from '../containers/MovieDetail';
 import Shows from '../containers/Shows';
 import ShowDetail from '../containers/ShowDetail';
+import Search from '../containers/Search';
 import Home from '../containers/Home';
 
 Vue.use(Router);
@@ -41,6 +42,11 @@ export default new Router({
       path: '/show/:id',
       name: 'ShowDetail',
       component: ShowDetail,
+    },
+    {
+      path: '/search/',
+      name: 'Search',
+      component: Search,
     },
     {
       path: '/home',

@@ -3,4 +3,13 @@
 $body-background: $black;
 $primary: #ff0000;
 
+.main {
+  padding-top: 100px;
+}
+
+.is-fluid {
+  width: 100%;
+  display: block;
+}
+
 @import '../node_modules/bulma/bulma'
