@@ -1,1 +1,6 @@
+@import '../node_modules/bulma/sass/utilities/initial-variables';
 
+$body-background: $black;
+$primary: #ff0000;
+
+@import '../node_modules/bulma/bulma'

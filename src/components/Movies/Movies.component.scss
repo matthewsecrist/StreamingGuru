@@ -1,17 +1,8 @@
-.movies {
-
+.main {
+  padding-top: 100px;
 }
 
-.list-item {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.list-enter-active, .list-leave-active {
-  transition: all 1s;
-}
-
-.list-enter, .list-leave-to /* .list-leave-active for <2.1.8 */ {
-  opacity: 0;
-  transform: translateY(100px);
+.is-fluid {
+  width: 100%;
+  display: block;
 }

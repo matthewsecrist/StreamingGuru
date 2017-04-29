@@ -10,7 +10,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: 'history',
-  linkActiveClass: '',
+  linkActiveClass: 'is-active',
   routes: [
     {
       path: '/movies/:source',
@@ -43,8 +43,13 @@ export default new Router({
       component: ShowDetail,
     },
     {
-      path: '/',
+      path: '/home',
       name: 'Home',
+      component: Home,
+    },
+    {
+      path: '/',
+      name: 'root',
       component: Home,
     },
   ],

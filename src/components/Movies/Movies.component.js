@@ -10,19 +10,15 @@ export default {
   data() {
     return {
       moviesData: [],
-      loading: false,
       error: null,
     };
   },
   methods: {
     getAllMovies() {
-      this.loading = true;
       const url = formatRequest('movies', this.$route.params.source);
       axios.get(url)
         .then((res) => {
           this.moviesData = res.data.results;
-        }).then(() => {
-          this.loading = false;
         })
         .catch((err) => {
           this.loading = false;
@@ -31,5 +27,6 @@ export default {
     },
   },
   updated() {
+    this.getAllMovies();
   },
 };
