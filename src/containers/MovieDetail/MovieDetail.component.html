@@ -1,4 +1,4 @@
-<section class="show-detail">
+<section class="show-detail" v-if="movieData.title">
   <section class="hero is-primary is-medium is-bold">
     <div class="hero-body">
       <div class="container">
@@ -14,21 +14,15 @@
             <div class="columns">
               <div class="column is-4">
                 <p>Purchase</p>
-                <div v-for="source in movieData.purchase_web_sources">
-                  <source-link v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
-                </div>
+                <source-link v-for="source in movieData.purchase_web_sources" v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
               </div>
               <div class="column is-4">
                 <p>Watch With Subscription</p>
-                <div v-for="source in movieData.subscription_web_sources">
-                  <source-link v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
-                </div>
+                <source-link v-for="source in movieData.subscription_web_sources" v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
               </div>
               <div class="column is-4">
                 <p>Watch for Free</p>
-                <div v-for="source in movieData.free_web_sources">
-                  <source-link v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
-                </div>
+                <source-link v-for="source in movieData.free_web_sources" v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
               </div>
             </div>
           </div>
@@ -44,9 +38,10 @@
   <!-- Related Movies Section -->
   <section class="related">
     <div class="container">
-      <h1 class="title white">Related Movies</h1>
+      <h1 class="title is-white">Related Movies</h1>
+      <h2 class="subtitle is-white">Not what you're looking for? Find something like it.</h2>
       <div class="columns is-multiline">
-        <div v-for="movie in relatedMovies" class="column is-one-quarter">
+        <div v-for="movie in relatedMovies.slice(0, 8)" class="column is-one-quarter">
           <router-link :to="{ name: 'MovieDetail', params: { id: movie.id }}">
             <img v-bind:src="movie.poster_400x570" class="is-fluid" />
           </router-link>
