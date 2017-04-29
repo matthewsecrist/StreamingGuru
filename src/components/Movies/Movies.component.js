@@ -1,4 +1,5 @@
 import axios from 'axios';
+import formatRequest from '../../utilities';
 
 export default {
   name: 'movies',
@@ -9,18 +10,26 @@ export default {
   data() {
     return {
       moviesData: [],
+      loading: false,
+      error: null,
     };
   },
   methods: {
     getAllMovies() {
-      const url = 'http://api-public.guidebox.com/v2/movies?api_key=515ce266b75ac765a709d1cede86ace60bb4be3f&limit=100';
+      this.loading = true;
+      const url = formatRequest('movies', this.$route.params.source);
       axios.get(url)
         .then((res) => {
           this.moviesData = res.data.results;
+        }).then(() => {
+          this.loading = false;
+        })
+        .catch((err) => {
+          this.loading = false;
+          this.error = err.toString();
         });
     },
   },
-  computed: {
-
+  updated() {
   },
 };

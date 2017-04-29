@@ -11,9 +11,19 @@ export default new Router({
   linkActiveClass: 'is-active',
   routes: [
     {
+      path: '/movies/:source',
+      name: 'Movies',
+      component: Movies,
+    },
+    {
       path: '/movies',
       name: 'Movies',
       component: Movies,
+    },
+    {
+      path: '/shows/:source',
+      name: 'Shows',
+      component: Shows,
     },
     {
       path: '/shows',

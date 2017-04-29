@@ -1,4 +1,5 @@
 import axios from 'axios';
+import formatRequest from '../../utilities';
 
 export default {
   name: 'shows',
@@ -9,15 +10,23 @@ export default {
   data() {
     return {
       showsData: [],
+      loading: false,
+      error: null,
     };
   },
   methods: {
     getAllShows() {
-      const url = 'http://api-public.guidebox.com/v2/shows?api_key=515ce266b75ac765a709d1cede86ace60bb4be3f&limit=100';
+      this.loading = true;
+      const url = formatRequest('shows', this.$route.params.source);
       axios.get(url)
         .then((res) => {
-          console.log(res.data);
           this.showsData = res.data.results;
+        }).then(() => {
+          this.loading = false;
+        })
+        .catch((err) => {
+          this.loading = false;
+          this.error = err.toString();
         });
     },
   },

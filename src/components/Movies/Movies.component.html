@@ -1,7 +1,13 @@
 <div>
-  <div class="columns is-multiline">
-    <div class="column is-one-quarter" v-for="movie in moviesData">
-      <img v-bind:src="movie.poster_400x570" class="is-fluid" />
-    </div>
+  <div class="loading" v-if="loading">
+    Loading...
+  </div>
+
+  <div v-if="error" class="error">
+    {{ error }}
+  </div>
+
+  <div v-bind:key="movie.id" v-if="moviesData" v-for="movie in moviesData">
+    <img v-bind:src="movie.poster_400x570" class="list-item" />
   </div>
 </div>
