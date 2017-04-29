@@ -13,3 +13,7 @@ export function formatRequest(type, params) {
 export function formatDetailRequest(type, params) {
   return `${API_URL}${type}/${params}?api_key=${API_KEY}`;
 }
+
+export function formatRelatedRequest(type, params) {
+  return `${API_URL}${type}/${params}/related?api_key=${API_KEY}`;
+}
