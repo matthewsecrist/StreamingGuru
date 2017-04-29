@@ -25,6 +25,40 @@
                 <source-link v-for="source in movieData.free_web_sources" v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
               </div>
             </div>
+            <div class="columns">
+              <div class="column is-one-quarter">
+                <h2 class="subtitle">Directed by</h2>
+                <ul>
+                  <li v-for="director in movieData.directors">
+                    <a href="http://www.imdb.com/name/" target="_blank">{{ director.name }}</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="column is-one-quarter">
+                <h2 class="subtitle">Written by</h2>
+                <ul>
+                  <li v-for="writer in movieData.writers">
+                    <a href="http://www.imdb.com/name/" target="_blank">{{ writer.name }}</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="column is-one-quarter">
+                <h2 class="subtitle">Starring</h2>
+                <ul>
+                  <li v-for="member in movieData.cast.slice(0, 10)">
+                    <a href="http://www.imdb.com/name/" target="_blank">{{ member.name }}</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="column is-one-quarter">
+                <h2 class="subtitle"><br /></h2>
+                <ul>
+                  <li v-for="member in movieData.cast.slice(10, 20)">
+                    <a href="http://www.imdb.com/name/" target="_blank">{{ member.name }}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <!-- End Left Side -->
           <div class="auto">
@@ -36,7 +70,7 @@
   </section>
   <!-- End header section -->
   <!-- Related Movies Section -->
-  <section class="related">
+  <section class="main">
     <div class="container">
       <h1 class="title is-white">Related Movies</h1>
       <h2 class="subtitle is-white">Not what you're looking for? Find something like it.</h2>
