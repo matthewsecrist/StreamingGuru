@@ -1,18 +1,20 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Movies from '../components/Movies';
+import MovieDetail from '../components/MovieDetail';
 import Shows from '../components/Shows';
+import ShowDetail from '../components/ShowDetail';
 import Home from '../components/Home';
 
 Vue.use(Router);
 
 export default new Router({
   mode: 'history',
-  linkActiveClass: 'is-active',
+  linkActiveClass: '',
   routes: [
     {
       path: '/movies/:source',
-      name: 'Movies',
+      name: 'MoviesSource',
       component: Movies,
     },
     {
@@ -21,14 +23,24 @@ export default new Router({
       component: Movies,
     },
     {
+      path: '/movie/:id',
+      name: 'MovieDetail',
+      component: MovieDetail,
+    },
+    {
       path: '/shows/:source',
-      name: 'Shows',
+      name: 'ShowsSource',
       component: Shows,
     },
     {
       path: '/shows',
       name: 'Shows',
       component: Shows,
+    },
+    {
+      path: '/show/:id',
+      name: 'ShowDetail',
+      component: ShowDetail,
     },
     {
       path: '/',

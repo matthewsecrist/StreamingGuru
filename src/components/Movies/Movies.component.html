@@ -8,6 +8,8 @@
   </div>
 
   <div v-bind:key="movie.id" v-if="moviesData" v-for="movie in moviesData">
-    <img v-bind:src="movie.poster_400x570" class="list-item" />
+    <router-link :to="{ name: 'MovieDetail', params: { id: movie.id }}">
+      <img v-bind:src="movie.poster_400x570" class="list-item" />
+    </router-link>
   </div>
 </div>

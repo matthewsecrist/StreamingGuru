@@ -8,6 +8,8 @@
   </div>
 
   <div v-for="show in showsData">
-    <img v-bind:src="show.artwork_608x342" />
+    <router-link :to="{ name: 'ShowDetail', params: { id: show.id }}">
+      <img v-bind:src="show.artwork_608x342" />
+    </router-link>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import formatRequest from '../../utilities';
+import { formatRequest } from '../../utilities';
 
 export default {
   name: 'movies',
