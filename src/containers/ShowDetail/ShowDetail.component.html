@@ -12,9 +12,13 @@
             </h2>
             <!-- Start Sources Section -->
             <div class="columns">
-              <div class="column is-4">
+              <div class="column auto">
                 <p>Where to Watch</p>
-                <source-link v-for="source in showData.channels" v-bind:name="source.name" v-bind:link="source.link"></source-link>
+                <source-link
+                  v-for="source in showContent.web.episodes.all_sources"
+                  v-bind:name="source.display_name"
+                  v-bind:key="source.id">
+                </source-link>
               </div>
             </div>
             <div class="columns">

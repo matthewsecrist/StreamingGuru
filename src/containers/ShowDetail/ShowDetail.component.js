@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { formatDetailRequest, formatRelatedRequest } from '../../utilities';
+import { formatDetailRequest, formatRelatedRequest, formatContentRequest } from '../../utilities';
 import SourceLink from '../../components/SourceLink';
 
 export default {
@@ -15,15 +15,18 @@ export default {
     return {
       showData: {},
       relatedShows: [],
+      showContent: {},
     };
   },
   methods: {
     getShowDetails() {
       const url = formatDetailRequest('shows', this.$route.params.id);
       const related = formatRelatedRequest('shows', this.$route.params.id);
-      axios.all([axios.get(url), axios.get(related)])
-        .then(axios.spread((show, relatedShows) => {
+      const content = formatContentRequest('shows', this.$route.params.id);
+      axios.all([axios.get(url), axios.get(related), axios.get(content)])
+        .then(axios.spread((show, relatedShows, showContent) => {
           this.relatedShows = relatedShows.data.results;
+          this.showContent = showContent.data.results;
           this.showData = show.data;
         }));
     },

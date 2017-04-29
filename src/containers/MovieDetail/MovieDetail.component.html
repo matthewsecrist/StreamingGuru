@@ -14,15 +14,30 @@
             <div class="columns">
               <div class="column is-4">
                 <p>Purchase</p>
-                <source-link v-for="source in movieData.purchase_web_sources" v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
+                <source-link
+                  v-for="source in movieData.purchase_web_sources"
+                  v-bind:name="source.display_name"
+                  v-bind:link="source.link"
+                  v-bind:key="source.id">
+                </source-link>
               </div>
               <div class="column is-4">
                 <p>Watch With Subscription</p>
-                <source-link v-for="source in movieData.subscription_web_sources" v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
+                <source-link
+                  v-for="source in movieData.subscription_web_sources"
+                  v-bind:name="source.display_name"
+                  v-bind:link="source.link"
+                  v-bind:key="source.id">
+                </source-link>
               </div>
               <div class="column is-4">
                 <p>Watch for Free</p>
-                <source-link v-for="source in movieData.free_web_sources" v-bind:name="source.display_name" v-bind:link="source.link"></source-link>
+                <source-link
+                  v-for="source in movieData.free_web_sources"
+                  v-bind:name="source.display_name"
+                  v-bind:link="source.link"
+                  v-bind:key="source.id">
+                </source-link>
               </div>
             </div>
             <div class="columns">

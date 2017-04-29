@@ -17,3 +17,7 @@ export function formatDetailRequest(type, params) {
 export function formatRelatedRequest(type, params) {
   return `${API_URL}${type}/${params}/related?api_key=${API_KEY}`;
 }
+
+export function formatContentRequest(type, params) {
+  return `${API_URL}${type}/${params}/available_content?api_key=${API_KEY}`;
+}
