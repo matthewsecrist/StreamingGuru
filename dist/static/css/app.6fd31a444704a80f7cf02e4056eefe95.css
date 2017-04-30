@@ -1,4 +1,4 @@
-.main{padding-top:100px}.is-fluid{width:100%;display:block}
+.main{padding-top:100px;padding-bottom:100px}.is-fluid{width:100%;display:block}
 
 /*! bulma.io v0.4.1 | MIT License | github.com/jgthms/bulma */@-webkit-keyframes spinAround{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}@keyframes spinAround{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(359deg);transform:rotate(359deg)}}
 
