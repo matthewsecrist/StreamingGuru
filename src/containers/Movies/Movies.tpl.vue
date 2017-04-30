@@ -33,6 +33,14 @@
 
   <section class="main">
     <div class="container">
+      <div v-if="loading">
+        <scale-loader color="#ffffff"></scale-loader>
+      </div>
+      <div v-if="error">
+        <div class="notification is-danger">
+          Oh no! Something seems to have gone wrong. Try again later.
+        </div>
+      </div>
       <div class="columns is-multiline">
         <div v-for="movie in moviesData" class="column is-one-quarter">
           <router-link :to="{ name: 'MovieDetail', params: { id: movie.id }}">

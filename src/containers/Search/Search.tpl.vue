@@ -43,6 +43,19 @@
         </form>
       </div>
       <section class="main">
+        <div v-if="loading">
+          <scale-loader color="#ffffff"></scale-loader>
+        </div>
+        <div v-if="error">
+          <div class="notification is-danger">
+            Oh no! Something seems to have gone wrong. Try again later.
+          </div>
+        </div>
+        <div v-if="results.length < 1 && searchComplete">
+          <div class="notification is-danger">
+            We didn't find any results. :(
+          </div>
+        </div>
         <div class="columns is-multiline">
           <div v-for="result in results" class="column is-one-quarter">
             <div v-if="type === 'movie'">

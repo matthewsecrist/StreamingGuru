@@ -1,4 +1,5 @@
 import axios from 'axios';
+import ScaleLoader from 'vue-spinner/src/ScaleLoader';
 import { formatDetailRequest, formatRelatedRequest } from '../../utilities';
 import SourceLink from '../../components/SourceLink';
 
@@ -6,6 +7,7 @@ export default {
   name: 'movie-detail',
   components: {
     'source-link': SourceLink,
+    'scale-loader': ScaleLoader,
   },
   props: [],
   mounted() {
@@ -15,6 +17,8 @@ export default {
     return {
       movieData: {},
       relatedMovies: [],
+      loading: true,
+      error: null,
     };
   },
   methods: {
@@ -25,7 +29,14 @@ export default {
         .then(axios.spread((movie, relatedMovies) => {
           this.relatedMovies = relatedMovies.data.results;
           this.movieData = movie.data;
-        }));
+        }))
+        .then(() => {
+          this.loading = false;
+        })
+        .catch((err) => {
+          this.loading = false;
+          this.error = err.toString();
+        });
     },
   },
 };

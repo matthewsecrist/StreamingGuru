@@ -1,8 +1,12 @@
 import axios from 'axios';
+import ScaleLoader from 'vue-spinner/src/ScaleLoader';
 import { formatRequest } from '../../utilities';
 
 export default {
   name: 'movies',
+  components: {
+    'scale-loader': ScaleLoader,
+  },
   props: [],
   mounted() {
     this.getAllMovies();
@@ -11,6 +15,7 @@ export default {
     return {
       moviesData: [],
       error: null,
+      loading: true,
     };
   },
   methods: {
@@ -19,6 +24,9 @@ export default {
       axios.get(url)
         .then((res) => {
           this.moviesData = res.data.results;
+        })
+        .then(() => {
+          this.loading = false;
         })
         .catch((err) => {
           this.loading = false;

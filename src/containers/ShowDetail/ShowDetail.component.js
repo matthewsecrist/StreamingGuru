@@ -1,4 +1,5 @@
 import axios from 'axios';
+import ScaleLoader from 'vue-spinner/src/ScaleLoader';
 import { formatDetailRequest, formatRelatedRequest, formatContentRequest } from '../../utilities';
 import SourceLink from '../../components/SourceLink';
 
@@ -7,6 +8,7 @@ export default {
   props: [],
   components: {
     'source-link': SourceLink,
+    'scale-loader': ScaleLoader,
   },
   mounted() {
     this.getShowDetails();
@@ -16,6 +18,8 @@ export default {
       showData: {},
       relatedShows: [],
       showContent: {},
+      loading: true,
+      error: null,
     };
   },
   methods: {
@@ -28,7 +32,14 @@ export default {
           this.relatedShows = relatedShows.data.results;
           this.showContent = showContent.data.results;
           this.showData = show.data;
-        }));
+        }))
+        .then(() => {
+          this.loading = false;
+        })
+        .catch((err) => {
+          this.loading = false;
+          this.error = err.toString();
+        });
     },
   },
 };
