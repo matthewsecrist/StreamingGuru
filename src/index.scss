@@ -1,9 +1,17 @@
 @import '../node_modules/bulma/sass/utilities/initial-variables';
 
-$primary: rgba(59, 181, 255, 1);
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+
+$primary: rgba(70, 30, 100, 1);
 $black: rgba(34, 34, 34, 1);
 
 $body-background: $black;
+$family-sans-serif: 'Roboto', sans-serif;
+
+@import '../node_modules/bulma/bulma';
+
+
+
 .main {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -13,8 +21,6 @@ $body-background: $black;
   width: 100%;
   display: block;
 }
-
-@import '../node_modules/bulma/bulma';
 
 .fade-enter-active, .fade-leave-active {
   transition-property: opacity;
