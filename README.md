@@ -8,6 +8,7 @@
 # Add your API Key
 /config/dev.env.js
 Add API Key where it says // API KEY HERE
+
 # install dependencies
 npm install
 
