@@ -2,9 +2,7 @@
   <section class="hero is-primary is-fullheight is-bold">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">
-          Streaming.Guru
-        </h1>
+        <h1 class="title">Streaming.Guru</h1>
         <h2 class="subtitle">
           Spend a night in, find the perfect movie or show. Let us help you find it.
         </h2>
