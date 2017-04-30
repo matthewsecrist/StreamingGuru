@@ -1,0 +1,10 @@
+{
+ "name": "StreamingGuru",
+ "version": "1.0.0",
+ "description": "Where to find shows or movies to stream.",
+ "author": "Matthew Secrist <matthew.secrist@outlook.com>",
+ "private": true,
+ "scripts": {
+   "postinstall": "npm install express"
+ }
+}
