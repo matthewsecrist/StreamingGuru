@@ -1,18 +1,7 @@
-# whatcaniwatch
+# Streaming.Guru
 
 > A movie and show streaming lookup project built with Vue and Guidebox.
 
-## Build Setup
+Built to learn VueJS, I re-created (whatcaniwatch)[http://www.github.com/matthewsecrist/whatcaniwatch] using Vue.
 
-``` bash
-# Add your API Key
-/config/dev.env.js
-Add API Key where it says // API KEY HERE
-
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-```
+This version is a bit more full featured though, as it has a search option and Shows integrated in as well.
