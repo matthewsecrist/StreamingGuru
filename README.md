@@ -14,9 +14,9 @@ This version is a bit more full featured though, as it has a search option and S
 
 ## To-do:
 
-- [] Add actors, directors, writers pages with their attached movies and be able to search them. Right now the links just go to a broken imdb page.
-- [] Easily accessible trailers for movies.
-- [] Add testing
+- [ ] Add actors, directors, writers pages with their attached movies and be able to search them. Right now the links just go to a broken imdb page.
+- [ ] Easily accessible trailers for movies.
+- [ ] Add testing
 
 ## How to run:
 * Clone it.
