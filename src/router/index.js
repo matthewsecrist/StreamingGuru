@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Movies from '../containers/Movies';
-import MovieDetail from '../containers/MovieDetail';
-import Shows from '../containers/Shows';
-import ShowDetail from '../containers/ShowDetail';
-import Search from '../containers/Search';
-import Home from '../containers/Home';
+import Movies from '../views/Movies';
+import MovieDetail from '../views/MovieDetail';
+import Shows from '../views/Shows';
+import ShowDetail from '../views/ShowDetail';
+import Search from '../views/Search';
+import Home from '../views/Home';
 
 Vue.use(Router);
 
